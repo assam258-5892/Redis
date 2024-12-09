@@ -1,0 +1,8 @@
+[submodule "deps/redis"]
+	path = deps/redis
+	url = https://github.com/BlueSQL/redis
+	branch = BLUESQL_7_2_6
+[submodule "deps/RediSearch"]
+	path = deps/RediSearch
+	url = https://github.com/BlueSQL/RediSearch
+	branch = BLUESQL_2_8_15

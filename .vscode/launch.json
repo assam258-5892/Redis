@@ -8,7 +8,7 @@
             "name": "Redis Stack",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/redis/src/redis-server",
+            "program": "${workspaceFolder}/redis-server",
             "args": [
                 "redis-debug.conf"
             ],
@@ -22,6 +22,14 @@
             "osx": {
                 "MIMode": "lldb"
             }
+        },
+        {
+            "name": "generate",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/generate.py",
+            "stopOnEntry": true,
+            "console": "integratedTerminal"
         }
     ]
 }
