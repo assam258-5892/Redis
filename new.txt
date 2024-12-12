@@ -1,0 +1,92 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.alt' (creator: callgrind-3.18.1)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 59807816414
+Trigger: Program termination
+Profiled target:  ./redis-server redis-release.conf (PID 3547221, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       40
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+Ir                       
+--------------------------------------------------------------------------------
+255,320,705,335 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir                       file:function
+--------------------------------------------------------------------------------
+
+15,200,000,000 ( 5.95%)  *  deps/RediSearch/src/util/fnv.c:fnv_64a_buf [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+
+136,097,636,017 (53.30%)  < deps/RediSearch/src/rlookup.c:loadIndividualKeys (100,000,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+11,399,998,000 ( 4.46%)  *  deps/RediSearch/src/rlookup.c:getKeyCommonHash [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+52,371,158,134 (20.51%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_HashGet (100,000,000x)
+51,521,716,446 (20.18%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_OpenKey (100,000,000x)
+ 6,600,000,096 ( 2.58%)  >   /home/assam/Redis/deps/RediSearch/src/value.c:RS_NumVal (100,000,000x)
+ 5,400,601,157 ( 2.12%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_RecreateString (100,000,000x)
+ 2,900,141,184 ( 1.14%)  >   deps/RediSearch/src/rlookup.c:RLookup_WriteOwnKey (100,000,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+ 2,700,000,000 ( 1.06%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_StringToDouble (100,000,000x)
+ 1,604,021,000 ( 0.63%)  >   ???:0x0000000005ffd3e0 (100,000,000x) [???]
+ 1,600,000,000 ( 0.63%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_KeyType (100,000,000x)
+
+11,239,003,000 ( 4.40%)  *  deps/redis/src/module.c:RM_HashGet [/home/assam/Redis/deps/redis/src/redis-server]
+41,149,969,584 (16.12%)  >   /home/assam/Redis/deps/redis/src/t_hash.c:hashTypeGetValueObject (100,300,000x)
+    77,988,701 ( 0.03%)  >   /home/assam/Redis/deps/redis/src/object.c:decrRefCount (600,000x)
+    60,340,119 ( 0.02%)  >   /home/assam/Redis/deps/redis/src/object.c:getDecodedObject (300,000x)
+     4,800,000 ( 0.00%)  >   ???:0x000000000017c640 (300,000x) [???]
+
+11,100,057,315 ( 4.35%)  *  deps/redis/src/siphash.c:siphash [/home/assam/Redis/deps/redis/src/redis-server]
+
+10,734,353,296 ( 4.20%)  < ???:0x0000000005ffcf50 (5,410,011x) [???]
+   128,333,361 ( 0.05%)  < ???:0x000000000017c140 (658,066x) [???]
+        12,922 ( 0.00%)  < ???:0x0000000004a2c670 (18x) [???]
+10,862,699,579 ( 4.25%)  *  ./string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S:__memset_avx2_unaligned_erms [/usr/lib/x86_64-linux-gnu/libc.so.6]
+
+ 6,028,024,992 ( 2.36%)  < deps/redis/src/listpack.c:lpNext (100,300,000x) [/home/assam/Redis/deps/redis/src/redis-server]
+ 4,613,800,000 ( 1.81%)  < deps/redis/src/listpack.c:lpFirst (100,300,000x) [/home/assam/Redis/deps/redis/src/redis-server]
+10,641,824,992 ( 4.17%)  *  deps/redis/src/listpack.c:lpValidateNext [/home/assam/Redis/deps/redis/src/redis-server]
+
+32,215,382,992 (12.62%)  < deps/RediSearch/src/aggregate/group_by.c:Grouper_rpAccum (100,000,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+10,612,352,000 ( 4.16%)  *  deps/RediSearch/src/aggregate/group_by.c:extractGroups [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+ 3,500,000,000 ( 1.37%)  >   /home/assam/Redis/deps/RediSearch/src/aggregate/reducers/sum.c:sumAdd (100,000,000x)
+   190,336,697 ( 0.07%)  >   /home/assam/Redis/deps/RediSearch/src/rlookup.c:RLookup_WriteKey (1,000,000x)
+   131,265,639 ( 0.05%)  >   deps/RediSearch/src/aggregate/group_by.c:kh_resize_khid (10,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+    36,511,130 ( 0.01%)  >   /home/assam/Redis/deps/RediSearch/src/aggregate/reducers/sum.c:sumNewInstance (1,000,000x)
+    24,917,526 ( 0.01%)  >   /home/assam/Redis/deps/RediSearch/src/util/block_alloc.c:BlkAlloc_Alloc (1,000,000x)
+
+13,022,134,000 ( 5.10%)  < deps/RediSearch/src/result_processor.c:rploaderNext (100,001,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+ 7,801,047,000 ( 3.06%)  *  deps/RediSearch/src/result_processor.c:rpidxNext [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+ 2,500,000,000 ( 0.98%)  >   /home/assam/Redis/deps/RediSearch/src/doc_table.c:DocTable_Borrow (100,000,000x)
+ 1,600,011,000 ( 0.63%)  >   /home/assam/Redis/deps/RediSearch/src/index.c:WI_Read (100,001,000x)
+        65,000 ( 0.00%)  >   /home/assam/Redis/deps/RediSearch/src/redis_index.c:RedisSearchCtx_UnlockSpec (1,000x)
+
+ 6,539,521,984 ( 2.56%)  *  deps/redis/src/listpack.c:lpFind [/home/assam/Redis/deps/redis/src/redis-server]
+ 2,816,800,000 ( 1.10%)  >   deps/redis/src/listpack.c:lpGetWithSize.constprop.0 (100,600,000x) [/home/assam/Redis/deps/redis/src/redis-server]
+ 2,233,837,245 ( 0.87%)  >   ???:0x000000000017cbc0 (100,600,000x) [???]
+
+156,281,815,277 (61.21%)  < deps/RediSearch/src/rlookup.c:RLookup_LoadDocument (100,000,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+ 6,300,000,000 ( 2.47%)  *  deps/RediSearch/src/rlookup.c:loadIndividualKeys [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+136,097,636,017 (53.30%)  >   deps/RediSearch/src/rlookup.c:getKeyCommonHash (100,000,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+13,884,179,260 ( 5.44%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_CloseKey (100,000,000x)
+
+       383,400 ( 0.00%)  < deps/redis/src/dict.c:lookupCommandLogic (1,005x)
+        24,291 ( 0.00%)  < deps/redis/src/dict.c:dictFetchValue (41x) [/home/assam/Redis/deps/redis/src/redis-server]
+ 6,121,095,894 ( 2.40%)  *  deps/redis/src/dict.c:dictFind [/home/assam/Redis/deps/redis/src/redis-server]
+12,491,803,445 ( 4.89%)  >   /home/assam/Redis/deps/redis/src/server.c:dictSdsHash (100,200,001x)
+ 8,230,635,320 ( 3.22%)  >   /home/assam/Redis/deps/redis/src/server.c:dictSdsKeyCompare (138,142,000x)
+ 1,243,292,895 ( 0.49%)  >   deps/redis/src/dict.c:dictGetKey (138,143,655x) [/home/assam/Redis/deps/redis/src/redis-server]
+       226,001 ( 0.00%)  >   /home/assam/Redis/deps/redis/src/server.c:dictSdsCaseHash (1,120x)
+        87,054 ( 0.00%)  >   deps/redis/src/dict.c:dictRehash (215x) [/home/assam/Redis/deps/redis/src/redis-server]
+        84,847 ( 0.00%)  >   /home/assam/Redis/deps/redis/src/server.c:dictSdsKeyCaseCompare (1,152x)
+        61,797 ( 0.00%)  >   /home/assam/Redis/deps/redis/src/module.c:dictCStringKeyHash (371x)
+        24,994 ( 0.00%)  >   /home/assam/Redis/deps/redis/src/module.c:dictCStringKeyCompare (498x)
+         2,696 ( 0.00%)  >   /home/assam/Redis/deps/redis/src/server.c:dictCStrCaseHash (16x)
+           312 ( 0.00%)  >   /home/assam/Redis/deps/redis/src/server.c:dictCStrKeyCaseCompare (5x)

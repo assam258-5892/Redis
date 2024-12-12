@@ -1,0 +1,95 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.old' (creator: callgrind-3.18.1)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 96348432882
+Trigger: Program termination
+Profiled target:  ./redis-server redis-release.conf (PID 1733177, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       40
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+Ir                       
+--------------------------------------------------------------------------------
+444,588,354,658 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir                       file:function
+--------------------------------------------------------------------------------
+
+47,267,907,247 (10.63%)  < ./stdlib/./stdlib/strtod.c:strtod (100,200,004x) [/usr/lib/x86_64-linux-gnu/libc.so.6]
+25,560,438,320 ( 5.75%)  *  ./stdlib/./stdlib/strtod_l.c:____strtod_l_internal [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 9,683,559,830 ( 2.18%)  >   ./stdlib/./stdlib/strtod_l.c:str_to_mpn.constprop.0 (100,198,903x) [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 8,817,503,464 ( 1.98%)  >   ./stdlib/./stdlib/strtod_l.c:round_and_return (100,198,903x) [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 1,603,200,064 ( 0.36%)  >   ???:0x0000000004a2c490 (100,200,004x) [???]
+ 1,603,182,448 ( 0.36%)  >   ./stdlib/../sysdeps/x86_64/lshift.S:__mpn_lshift (100,198,903x) [/usr/lib/x86_64-linux-gnu/libc.so.6]
+        23,121 ( 0.00%)  >   ./stdlib/./stdlib/grouping.c:__correctly_grouped_prefixmb (1,101x) [/usr/lib/x86_64-linux-gnu/libc.so.6]
+
+20,527,732,849 ( 4.62%)  *  deps/redis/deps/jemalloc/src/jemalloc.c:je_malloc_usable_size [/home/assam/Redis/deps/redis/src/redis-server]
+
+15,697,678,061 ( 3.53%)  *  deps/redis/deps/jemalloc/include/jemalloc/internal/rtree.h:je_malloc_usable_size
+
+15,200,000,000 ( 3.42%)  *  deps/RediSearch/src/util/fnv.c:fnv_64a_buf [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+
+    36,783,001 ( 0.01%)  < deps/redis/src/zmalloc.c:RM_Strdup (401,039x)
+         5,493 ( 0.00%)  < deps/redis/src/zmalloc.c:stringConfigInit.lto_priv.0 (10x)
+           364 ( 0.00%)  < deps/redis/src/zmalloc.c:zstrdup (4x) [/home/assam/Redis/deps/redis/src/redis-server]
+           182 ( 0.00%)  < deps/redis/src/zmalloc.c:main (2x)
+           182 ( 0.00%)  < deps/redis/src/zmalloc.c:setConfigBindOption.lto_priv.0 (2x)
+11,367,818,402 ( 2.56%)  *  deps/redis/src/zmalloc.c:zmalloc [/home/assam/Redis/deps/redis/src/redis-server]
+20,264,371,934 ( 4.56%)  >   /home/assam/Redis/deps/redis/deps/jemalloc/src/jemalloc.c:je_malloc_usable_size (494,252,974x)
+13,528,473,412 ( 3.04%)  >   /home/assam/Redis/deps/redis/deps/jemalloc/src/jemalloc.c:je_malloc (494,252,974x)
+
+11,100,057,082 ( 2.50%)  *  deps/redis/src/siphash.c:siphash [/home/assam/Redis/deps/redis/src/redis-server]
+
+11,039,970,359 ( 2.48%)  < deps/redis/src/util.c:ll2string (100,201,021x) [/home/assam/Redis/deps/redis/src/redis-server]
+           157 ( 0.00%)  < deps/redis/src/util.c:rdbSaveAuxFieldStrInt (2x)
+           120 ( 0.00%)  < deps/redis/src/util.c:createSharedObjects (10x)
+            34 ( 0.00%)  < deps/redis/src/util.c:rdbSaveInfoAuxFields (1x)
+11,039,970,808 ( 2.48%)  *  deps/redis/src/util.c:ull2string [/home/assam/Redis/deps/redis/src/redis-server]
+
+10,734,353,296 ( 2.41%)  < ???:0x0000000005ffcf50 (5,410,011x) [???]
+   128,387,022 ( 0.03%)  < ???:0x000000000017c140 (657,906x) [???]
+        13,399 ( 0.00%)  < ???:0x0000000004a2c670 (42x) [???]
+10,862,753,717 ( 2.44%)  *  ./string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S:__memset_avx2_unaligned_erms [/usr/lib/x86_64-linux-gnu/libc.so.6]
+
+10,642,010,000 ( 2.39%)  *  deps/redis/src/module.c:RM_HashGet [/home/assam/Redis/deps/redis/src/redis-server]
+32,434,398,901 ( 7.30%)  >   /home/assam/Redis/deps/redis/src/object.c:decrRefCount (200,600,000x)
+30,508,779,453 ( 6.86%)  >   /home/assam/Redis/deps/redis/src/object.c:getDecodedObject (100,300,000x)
+ 1,604,800,000 ( 0.36%)  >   ???:0x000000000017c640 (100,300,000x) [???]
+
+ 6,028,024,992 ( 1.36%)  < deps/redis/src/listpack.c:lpNext (100,300,000x) [/home/assam/Redis/deps/redis/src/redis-server]
+ 4,613,800,000 ( 1.04%)  < deps/redis/src/listpack.c:lpFirst (100,300,000x) [/home/assam/Redis/deps/redis/src/redis-server]
+10,641,824,992 ( 2.39%)  *  deps/redis/src/listpack.c:lpValidateNext [/home/assam/Redis/deps/redis/src/redis-server]
+
+32,188,011,524 ( 7.24%)  < deps/RediSearch/src/aggregate/group_by.c:Grouper_rpAccum (100,000,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+10,588,834,000 ( 2.38%)  *  deps/RediSearch/src/aggregate/group_by.c:extractGroups [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+ 3,500,000,000 ( 0.79%)  >   /home/assam/Redis/deps/RediSearch/src/aggregate/reducers/sum.c:sumAdd (100,000,000x)
+   185,961,214 ( 0.04%)  >   /home/assam/Redis/deps/RediSearch/src/rlookup.c:RLookup_WriteKey (1,000,000x)
+   132,244,146 ( 0.03%)  >   deps/RediSearch/src/aggregate/group_by.c:kh_resize_khid (10,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+    36,521,139 ( 0.01%)  >   /home/assam/Redis/deps/RediSearch/src/aggregate/reducers/sum.c:sumNewInstance (1,000,000x)
+    24,451,025 ( 0.01%)  >   /home/assam/Redis/deps/RediSearch/src/util/block_alloc.c:BlkAlloc_Alloc (1,000,000x)
+
+316,264,410,882 (71.14%)  < deps/RediSearch/src/rlookup.c:loadIndividualKeys (100,000,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+10,000,000,000 ( 2.25%)  *  deps/RediSearch/src/rlookup.c:getKeyCommonHash [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+152,575,599,454 (34.32%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_HashGet (100,000,000x)
+58,077,571,000 (13.06%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_StringToDouble (100,000,000x)
+51,362,825,861 (11.55%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_OpenKey (100,000,000x)
+15,916,703,543 ( 3.58%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_FreeString (200,000,000x)
+15,627,470,748 ( 3.52%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_CreateString (100,000,000x)
+ 6,600,000,096 ( 1.48%)  >   /home/assam/Redis/deps/RediSearch/src/value.c:RS_NumVal (100,000,000x)
+ 2,900,141,180 ( 0.65%)  >   deps/RediSearch/src/rlookup.c:RLookup_WriteOwnKey (100,000,000x) [/home/assam/Redis/deps/RediSearch/bin/linux-x64-release/search/redisearch.so]
+ 1,604,099,000 ( 0.36%)  >   ???:0x0000000005ffd3e0 (100,000,000x) [???]
+ 1,600,000,000 ( 0.36%)  >   /home/assam/Redis/deps/redis/src/module.c:RM_KeyType (100,000,000x)
+
+ 9,683,559,830 ( 2.18%)  < ./stdlib/./stdlib/strtod_l.c:____strtod_l_internal (100,198,903x) [/usr/lib/x86_64-linux-gnu/libc.so.6]
+ 9,683,559,830 ( 2.18%)  *  ./stdlib/./stdlib/strtod_l.c:str_to_mpn.constprop.0 [/usr/lib/x86_64-linux-gnu/libc.so.6]
+
+ 8,988,591,375 ( 2.02%)  *  deps/redis/deps/jemalloc/include/jemalloc/internal/rtree.h:je_free
